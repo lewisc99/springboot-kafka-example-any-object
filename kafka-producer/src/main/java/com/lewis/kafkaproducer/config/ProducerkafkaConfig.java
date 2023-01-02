@@ -24,7 +24,7 @@ public class ProducerkafkaConfig {
 
     @Autowired
     private KafkaProperties kafkaProperties;
-    
+
 
     @Bean
     public KafkaAdmin kafkaAdmin()
