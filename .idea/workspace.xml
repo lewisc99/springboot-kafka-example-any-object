@@ -39,6 +39,40 @@
     "settings.editor.selected.configurable": "preferences.fileTypes"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.KafkaConsumerApplication">
+    <configuration name="KafkaConsumerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lewis.kafkaconsumer.KafkaConsumerApplication" />
+      <module name="kafka-consumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lewis.kafkaconsumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KafkaProducerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lewis.kafkaproducer.KafkaProducerApplication" />
+      <module name="kafka-producer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lewis.kafkaproducer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.KafkaConsumerApplication" />
+        <item itemvalue="Application.KafkaProducerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
