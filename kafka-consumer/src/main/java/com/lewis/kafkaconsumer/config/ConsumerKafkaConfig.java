@@ -1,12 +1,8 @@
 package com.lewis.kafkaconsumer.config;
 
 
-import com.fasterxml.jackson.databind.JsonSerializable;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.context.annotation.Bean;
@@ -14,10 +10,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
-import org.springframework.kafka.listener.*;
 import org.springframework.kafka.support.converter.JsonMessageConverter;
-import org.springframework.kafka.support.serializer.JsonSerializer;
-import org.springframework.util.backoff.FixedBackOff;
+
 
 import java.util.HashMap;
 
@@ -27,6 +21,7 @@ public class ConsumerKafkaConfig {
 
     @Autowired
     private KafkaProperties kafkaProperties;
+
 
     @Bean
     public ConsumerFactory jsonConsumerFactory()
@@ -41,7 +36,6 @@ public class ConsumerKafkaConfig {
 
     }
 
-
     @Bean
     public ConcurrentKafkaListenerContainerFactory jsonKafkaListenerContainerFactory()
     {
@@ -50,10 +44,5 @@ public class ConsumerKafkaConfig {
         factory.setMessageConverter(new JsonMessageConverter());
         return factory;
     }
-
-
-
-
-
 
 }

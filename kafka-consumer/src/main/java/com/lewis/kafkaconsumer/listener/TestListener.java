@@ -22,13 +22,11 @@ public class TestListener {
         + metadata.partition() + " groupId: group-1 ");
         System.out.println(" Person name : " + person.getName() + " Person Age: " + person.getAge());
         System.out.println("-------------------------------------------");
-
     }
 
      @KafkaListener(topics = "person-example-topic", groupId = "group-2", containerFactory = "jsonKafkaListenerContainerFactory")
-     @RetryableTopic(attempts = "4", dltTopicSuffix = ".dlt", backoff = @Backoff(delay = 2000, multiplier = 3.0)  )
-     @SendTo("person-example-topic.DLT")
-    public void personExampleDifferentGroupId(Person person, ConsumerRecordMetadata metadata)
+     @RetryableTopic(attempts = "4", dltTopicSuffix = ".dlt", backoff = @Backoff(delay = 2000, multiplier = 3.0 ) , autoStartDltHandler = "")
+     public void personExampleDifferentGroupId(Person person, ConsumerRecordMetadata metadata)
     {
 
         System.out.println("Topic : " + metadata.topic() + " partition: "
@@ -39,9 +37,10 @@ public class TestListener {
     }
 
     @DltHandler
-    public void dltSecond(Person person, ConsumerRecordMetadata metadata)
+    public void personExampleDLT(Person person, ConsumerRecordMetadata metadata)
     {
         System.out.println("DLT messages errors " + person.getName());
     }
+
 
 }
