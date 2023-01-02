@@ -58,7 +58,8 @@ public class ProducerkafkaConfig {
     KafkaAdmin.NewTopics topics()
     {
         return new KafkaAdmin.NewTopics(
-                TopicBuilder.name("person-example-topic").partitions(2).build()
+                TopicBuilder.name("person-example-topic").partitions(2).build(),
+                TopicBuilder.name("person-example-topic.DLT").partitions(2).build()
         );
     }
 
